@@ -1,24 +1,32 @@
 ﻿  MyUpdate.c
-d:\github\myupdate\myupdate\myupdate.c(35): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\github\myupdate\myupdate\myupdate.c(32): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
-d:\github\myupdate\myupdate\myupdate.c(40): warning C4477: 'scanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
+d:\github\myupdate\myupdate\myupdate.c(37): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
+d:\github\myupdate\myupdate\myupdate.c(38): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
+d:\github\myupdate\myupdate\myupdate.c(39): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
 d:\github\myupdate\myupdate\myupdate.c(40): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
-d:\github\myupdate\myupdate\myupdate.c(41): warning C4477: 'scanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
-d:\github\myupdate\myupdate\myupdate.c(41): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\github\myupdate\myupdate\myupdate.c(70): warning C4020: 'mysql_query': 실제 매개 변수가 너무 많습니다.
+d:\github\myupdate\myupdate\myupdate.c(80): warning C4020: 'mysql_query': 실제 매개 변수가 너무 많습니다.
+d:\github\myupdate\myupdate\myupdate.c(89): warning C4020: 'mysql_query': 실제 매개 변수가 너무 많습니다.
+d:\github\myupdate\myupdate\myupdate.c(63): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
-d:\github\myupdate\myupdate\myupdate.c(42): warning C4477: 'scanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
-d:\github\myupdate\myupdate\myupdate.c(42): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\github\myupdate\myupdate\myupdate.c(64): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
-d:\github\myupdate\myupdate\myupdate.c(43): warning C4477: 'scanf' : 서식 문자열 '%s'에 'char *' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int'입니다.
-d:\github\myupdate\myupdate\myupdate.c(43): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\github\myupdate\myupdate\myupdate.c(65): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
-d:\github\myupdate\myupdate\myupdate.c(60): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\github\myupdate\myupdate\myupdate.c(66): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
-d:\github\myupdate\myupdate\myupdate.c(56): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
-d:\github\myupdate\myupdate\myupdate.c(81): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\github\myupdate\myupdate\myupdate.c(44): warning C4101: 'pm' :참조되지 않은 지역 변수입니다.
+d:\github\myupdate\myupdate\myupdate.c(104): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
-d:\github\myupdate\myupdate\myupdate.c(82): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\github\myupdate\myupdate\myupdate.c(100): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+d:\github\myupdate\myupdate\myupdate.c(125): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(1272): note: 'scanf' 선언을 참조하십시오.
+d:\github\myupdate\myupdate\myupdate.c(126): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(207): note: 'fopen' 선언을 참조하십시오.
   MyUpdate.vcxproj -> D:\GitHub\MyUpdate\MyUpdate\Debug\MyUpdate.exe
   MyUpdate.vcxproj -> D:\GitHub\MyUpdate\MyUpdate\Debug\MyUpdate.pdb (Partial PDB)

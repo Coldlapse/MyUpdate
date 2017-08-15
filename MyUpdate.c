@@ -4,14 +4,11 @@
 #include <conio.h>
 #include <windows.h>
 
-struct Person {
-	char host;
-	char account;
-	char password;
-	char database;
-	char table;
-};
-struct Person DB; // 최대 10명 저장
+char host[16];
+char account[100];
+char password[100];
+char database[100];
+
 int cnt = 0;
 
 int Menu()
@@ -37,18 +34,65 @@ int Menu()
 }
 
 void Connect() {
-	printf("서버 호스트를 입력하세요 : "); scanf("%s", DB.host);
-	printf("계정명을 입력하세요 : "); scanf("%s", DB.account);
-	printf("계정 비밀번호를 입력하세요 : "); scanf("%s", DB.password);
-	printf("DB명을 입력하세요 : "); scanf("%s", DB.database);
+	printf("서버 호스트를 입력하세요 : "); scanf("%s", host);
+	printf("계정명을 입력하세요 : "); scanf("%s", account);
+	printf("계정 비밀번호를 입력하세요 : "); scanf("%s", password);
+	printf("DB명을 입력하세요 : "); scanf("%s", database);
 }
 
 void MyUpdate() {
-	int i;
-	printf("이름\t주소\t전화번호\t특이사항\t\n");
-	for (i = 0; i < cnt; i++)
-		//printf("%s\t%s\t%s\t%s\n", DB[i].name, DB[i].addr, DB[i].tel, DB[i].special);
-	system("pause");
+	char pm[10];
+	char table[100];
+	char howtochange[2];
+	char yeol[100];
+	char amount[100];
+
+	MYSQL *conn = mysql_init(NULL);
+		if (conn == NULL)
+		{
+			fprintf(stderr,"%s\n", mysql_error(conn));
+			exit(1);
+		}
+		if (mysql_real_connect(conn, host, account, password, NULL, 0, NULL, 0) == NULL)
+		{
+			fprintf(stderr, "%s\n", mysql_error(conn));
+			mysql_close(conn);
+			exit(1);
+		}
+		
+	    printf("수정할 테이블을 입력하세요 : "); scanf("%s", table);
+		printf("수정할 열을 입력하세요 : "); scanf("%s", yeol);
+	    printf("수정할 값을 입력하세요 : "); scanf("%s", amount);
+		printf("더할 것이라면 +, 뺄 것이라면 -, 바꿀 것이라면 = 을 입력하세요 : "); scanf("%s", howtochange);
+	    
+		if (strcmp(howtochange, "+") == 0)
+		{
+			if (mysql_query(conn, "UPDATE ", table, " SET ", yeol, " = ", yeol, " + ", amount))
+			{
+				fprintf(stderr,"%s\n" , mysql_error(conn));
+				mysql_close(conn);
+				exit(1);
+			}
+			mysql_close(conn);
+		}
+		else if (strcmp(howtochange, "-") == 0)
+		{
+			if (mysql_query(conn, "UPDATE", table, "SET", yeol, "=", yeol, "-", amount))
+			{
+				fprintf(stderr,"%s\n", mysql_error(conn));
+				mysql_close(conn);
+				exit(1);
+			}
+		}
+		else if (strcmp(howtochange, "=") == 0)
+		{
+			if (mysql_query(conn, "UPDATE", table, "SET", yeol, "=", amount))
+			{
+				fprintf(stderr, "%s\n", mysql_error(conn));
+				mysql_close(conn);
+				exit(1);
+			}
+		}
 }
 
 void Search() {
