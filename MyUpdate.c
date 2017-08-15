@@ -46,6 +46,10 @@ void MyUpdate() {
 	char howtochange[2];
 	char yeol[100];
 	char amount[100];
+	char plus[255];
+	char minus[255];
+	char equal[255];
+
 
 	MYSQL *conn = mysql_init(NULL);
 		if (conn == NULL)
@@ -53,7 +57,7 @@ void MyUpdate() {
 			fprintf(stderr,"%s\n", mysql_error(conn));
 			exit(1);
 		}
-		if (mysql_real_connect(conn, host, account, password, NULL, 0, NULL, 0) == NULL)
+		if (mysql_real_connect(conn, host, account, password, database, 0, NULL, 0) == NULL)
 		{
 			fprintf(stderr, "%s\n", mysql_error(conn));
 			mysql_close(conn);
@@ -65,9 +69,13 @@ void MyUpdate() {
 	    printf("수정할 값을 입력하세요 : "); scanf("%s", amount);
 		printf("더할 것이라면 +, 뺄 것이라면 -, 바꿀 것이라면 = 을 입력하세요 : "); scanf("%s", howtochange);
 	    
+		sprintf(plus, "UPDATE %s SET %s = %s + %s", table, yeol, yeol, amount);
+		sprintf(minus, "UPDATE %s SET %s = %s - %s", table, yeol, yeol, amount);
+		sprintf(equal, "UPDATE %s SET %s = %s", table, yeol, amount);
+
 		if (strcmp(howtochange, "+") == 0)
 		{
-			if (mysql_query(conn, "UPDATE ", table, " SET ", yeol, " = ", yeol, " + ", amount))
+			if (mysql_query(conn, plus))
 			{
 				fprintf(stderr,"%s\n" , mysql_error(conn));
 				mysql_close(conn);
@@ -77,7 +85,7 @@ void MyUpdate() {
 		}
 		else if (strcmp(howtochange, "-") == 0)
 		{
-			if (mysql_query(conn, "UPDATE", table, "SET", yeol, "=", yeol, "-", amount))
+			if (mysql_query(conn, minus))
 			{
 				fprintf(stderr,"%s\n", mysql_error(conn));
 				mysql_close(conn);
@@ -86,7 +94,7 @@ void MyUpdate() {
 		}
 		else if (strcmp(howtochange, "=") == 0)
 		{
-			if (mysql_query(conn, "UPDATE", table, "SET", yeol, "=", amount))
+			if (mysql_query(conn, equal))
 			{
 				fprintf(stderr, "%s\n", mysql_error(conn));
 				mysql_close(conn);
@@ -95,41 +103,18 @@ void MyUpdate() {
 		}
 }
 
-void Search() {
-	char FindName[20];
-	int i;
-	if (cnt == 0) puts("입력 데이터가 없습니다!");
-	else {
-		printf("찾을 이름은? : ");
-		scanf("%s", FindName);
-		//for (i = 0; i < cnt; i++)
-		//{
-			//if (strcmp(DB[i].name, FindName) == 0)
-			//	printf("%s\t%s\t%s\t%s\n", DB[i].name, DB[i].addr, DB[i].tel, DB[i].special);
-			// else printf("찾는 이름이 없습니다.\n");
-	//	}
-	}
+void Help() {
+	printf("MyUpdate Ver Beta.0.1 by SINOBUZ\n");
+	printf("MySQL 설정에서, 외부 접속 권한을 획득하셔야 합니다!\n");
+	printf("GRANT ALL ~ 명령어를 쓰시면 됩니다.\n");
 	system("pause");
 }
 
-void Save() {
-	char FileName[10];
-	FILE* fp;
-	int i;
-	if (cnt == 0) {
-		printf("입력 데이터 없음\n");
-		system("pause");
-		return;
-	}
-	printf("저장할 파일명 입력 : ");
-	scanf("%s", FileName);
-	fp = fopen(FileName, "w");
-
-	for (i = 0; i < cnt; i++)
-		//fprintf(fp, "%s\t%s\t%s\t%s\n", DB[i].name, DB[i].addr, DB[i].tel, DB[i].special);
-	printf("파일 저장 완료\n");
+void Creator() {
+	printf("가온고등학교 2학년 5반 서준원\n");
+	printf("계절학기 컴퓨터프로그래밍 II 교실에서 학습함\n");
+	printf("e-mail : vegarian@overcast.kr\n");
 	system("pause");
-
 }
 
 void main()
@@ -140,8 +125,8 @@ void main()
 		{
 		case 1: Connect(); break;
 		case 2: MyUpdate(); break;
-		case 3: Search(); break;
-		case 4: Save(); break;
+		case 3: Help(); break;
+		case 4: Creator(); break;
 		case 5: printf("사요-나라!\n"); exit(0); break;
 		default: printf("그런 메뉴는 존재하지 않는데수웅\n"); break;
 		}
